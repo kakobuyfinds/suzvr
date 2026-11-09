@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>OopBuy spreadsheet – Kategorien, Größen und QC-Fotos</title>
+  <meta name="description" content="Entdecke Schuhe, Streetwear und Accessoires im Ratgeber zum OopBuy spreadsheet. Prüfe Produktlinks und vergleiche Größen, QC-Fotos sowie Versandkosten.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:title" content="OopBuy spreadsheet – Kategorien, Größen und QC-Fotos">
+  <meta property="og:description" content="Kategorien bei HipobuyFind entdecken und Produktvarianten, Maße sowie Lagerfotos gezielt vergleichen.">
+  <style>
+    :root{color-scheme:light;--paper:#faf7f0;--ink:#202735;--muted:#4b5362;--line:#c9c5bb;--blue:#293779;--lime:#e5f083;--white:#fff}
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--paper);color:var(--ink);font:1rem/1.62 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+    a{color:inherit;text-underline-offset:.2em}
+    a:focus-visible,summary:focus-visible{outline:3px solid #6650bf;outline-offset:4px}
+    h1,h2,h3,p,figure,ol,ul{margin:0}
+    h1,h2,h3{line-height:1.12;text-wrap:balance}
+    h2{font-size:clamp(1.75rem,4vw,2.8rem);letter-spacing:-.045em}
+    h3{font-size:1.25rem}
+    img{display:block;max-width:100%;height:auto}
+    .wrap{width:min(72rem,calc(100% - 2rem));margin-inline:auto}
+    .mast{border-bottom:1px solid var(--line)}
+    .mast .wrap,.foot .wrap{display:flex;align-items:center;justify-content:space-between;gap:.7rem;flex-wrap:wrap;padding-block:.85rem}
+    .brand{font-weight:800;color:var(--blue)}
+    .label{font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;font-weight:800}
+    .mast .label,.subtle{color:var(--muted)}
+    .hero{display:grid;grid-template-columns:1.15fr 1fr;margin-top:1rem;border:1px solid var(--blue)}
+    .hero-copy{padding:clamp(1.35rem,4.5vw,3.3rem);background:var(--blue);color:var(--white)}
+    .hero-copy .label{color:var(--lime)}
+    h1{margin:.55rem 0 .9rem;font-size:clamp(2.75rem,6.6vw,5.35rem);letter-spacing:-.07em}
+    .hero-copy p:not(.label){max-width:44ch}
+    .hero-shot{display:grid;align-content:center;gap:.75rem;background:var(--white);padding:clamp(.85rem,3vw,2.4rem)}
+    .hero-shot img{width:100%}
+    figcaption{font-size:.875rem;color:var(--muted)}
+    .hero-shot figcaption{border-top:1px solid var(--line);padding-top:.55rem}
+    .block{padding-block:clamp(1.65rem,5vw,3.2rem);border-bottom:1px solid var(--line)}
+    .intro{margin-top:.65rem;max-width:70ch}
+    .directory{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));list-style:none;padding:0;margin-top:1rem;border-top:1px solid var(--line);border-left:1px solid var(--line)}
+    .directory li{min-width:0;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+    .directory a{display:flex;flex-direction:column;justify-content:center;gap:.18rem;min-height:4.35rem;height:100%;padding:.65rem .75rem;font-weight:750;text-decoration:none;overflow-wrap:anywhere}
+    .directory a:hover{background:var(--lime);text-decoration:underline}
+    .directory span{color:var(--muted);font-size:.7rem;font-weight:650}
+    .feature{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.6fr);gap:clamp(1.1rem,4vw,3rem)}
+    .feature header .label{color:var(--blue);margin-bottom:.45rem}
+    .prose p+p{margin-top:.65rem}
+    .gallery{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.85rem;margin-top:1rem}
+    .gallery img{width:100%;aspect-ratio:1;background:var(--white);object-fit:contain;border:1px solid var(--line)}
+    .gallery figcaption{padding-top:.42rem}
+    .gallery strong{color:var(--ink)}
+    .checks{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem;list-style:none;padding:0;margin-top:1.2rem}
+    .checks li{border-top:4px solid var(--blue);padding:.8rem .85rem 1rem;background:var(--white)}
+    .checks h3{margin:.3rem 0 .5rem}
+    .checks .label{color:var(--blue)}
+    .faq{margin-top:1rem;border-top:1px solid var(--line)}
+    details{border-bottom:1px solid var(--line);padding:.65rem 0}
+    summary{cursor:pointer;font-weight:780;padding:.15rem .1rem}
+    details p{padding:.35rem 0 .2rem;max-width:74ch}
+    .foot{background:var(--blue);color:var(--white);margin-top:2rem}
+    .foot a{display:inline-flex;align-items:center;min-height:2.75rem;padding:.4rem .85rem;background:var(--lime);color:var(--ink);font-weight:800}
+    .foot a:focus-visible{outline-color:var(--white)}
+    @media(max-width:53rem){.directory{grid-template-columns:repeat(3,minmax(0,1fr))}}
+    @media(max-width:42rem){.hero,.feature,.checks{grid-template-columns:1fr}.gallery{grid-template-columns:repeat(2,minmax(0,1fr))}.hero-shot img{max-height:12rem;object-fit:contain}}
+    @media(max-width:32rem){.directory{grid-template-columns:repeat(2,minmax(0,1fr))}.mast .wrap{gap:.25rem}}
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "name": "OopBuy spreadsheet – Kategorien, Größen und QC-Fotos",
+    "inLanguage": "de",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Was ist ein OopBuy spreadsheet?",
+        "acceptedAnswer": {"@type":"Answer","text":"Ein OopBuy spreadsheet ist eine nach Produktgruppen geordnete Sammlung von Produktverweisen für die Einkaufsrecherche. Diese Seite ist ein unabhängiger Ratgeber und verweist auf Kategorien bei HipobuyFind."}
+      },
+      {
+        "@type": "Question",
+        "name": "Wie erkenne ich, ob ein Produktlink noch aktuell ist?",
+        "acceptedAnswer": {"@type":"Answer","text":"Öffne das ursprüngliche Angebot und wähle die gewünschte Farbe und Größe aus. Prüfe, ob genau diese Variante verfügbar ist, und halte das Datum deines letzten Checks fest."}
+      },
+      {
+        "@type": "Question",
+        "name": "Was zeigen QC-Fotos aus dem Lager?",
+        "acceptedAnswer": {"@type":"Answer","text":"QC-Fotos zeigen den zur Kontrolle fotografierten Artikel. Sie helfen dir, Farbe, Etikett, Maße und sichtbare Mängel zu prüfen. Für einen Echtheitsnachweis brauchst du zusätzliche Belege zur Herkunft."}
+      },
+      {
+        "@type": "Question",
+        "name": "Wie finde ich die passende Größe bei Sneakern und Hoodies?",
+        "acceptedAnswer": {"@type":"Answer","text":"Miss bei Sneakern beide Füße und vergleiche den längeren Fuß mit der Größentabelle des Angebots. Bei Hoodies helfen Brustweite und Rückenlänge eines passenden, flach ausgelegten Kleidungsstücks."}
+      },
+      {
+        "@type": "Question",
+        "name": "Wie vergleiche ich die Gesamtkosten für den Versand?",
+        "acceptedAnswer": {"@type":"Answer","text":"Addiere Artikelpreis, gegebenenfalls Inlandsversand und Servicegebühren, internationale Versandkosten und mögliche Einfuhrkosten. Vergleiche Angebote für dasselbe Zielland mit denselben Paketmaßen und demselben Gewicht."}
+      }
+    ]
+  }
+  </script>
+<link rel="canonical" href="https://kakobuyfinds.github.io/suzvr/">
+</head>
+<body>
+  <!--
+  Google hat den Zugriff auf die Ergebnisseite begrenzt. Der Themenabgleich beruht auf zehn zugänglichen Websuchtreffern.
+  https://oopspreadsheet.com/ | https://opbuysheet.com/ | https://www.oocbuy.com/
+  https://github.com/matskna-ops/oopbuy-spreadsheet-2026 | https://oopbuysupply.com/ | https://oopbuyy.com/
+  https://oopbuytab.com/spreadsheet/ | https://oopbuy.club/ | https://oopbuydb.com/ | https://oopbuy.fit/
+  Suchschwerpunkte sind OopBuy Produktlinks, OopBuy QC-Fotos, OopBuy Größenvergleich und OopBuy Versandkosten.
+  -->
+  <header class="mast">
+    <div class="wrap">
+      <a class="brand" href="https://www.hipobuyfind.com">www.hipobuyfind.com</a>
+      <p class="label">Einkaufsratgeber auf Deutsch</p>
+    </div>
+  </header>
+  <main class="wrap">
+    <section class="hero" aria-labelledby="seitentitel">
+      <div class="hero-copy">
+        <p class="label">Streetwear · Sneaker · Accessoires</p>
+        <h1 id="seitentitel">OopBuy spreadsheet</h1>
+        <p>Starte mit einer Kategorie und halte fest, was du am Angebot prüfen willst. Dieser Ratgeber zeigt dir, wie du Produktlinks, Passform und Lagerfotos vergleichst, bevor du dich für eine Variante entscheidest.</p>
+      </div>
+      <figure class="hero-shot">
+        <img src="https://image.goat.com/transform/v1/attachments/product_template_additional_pictures/images/113/540/382/original/712867_01.jpg.jpeg?action=crop&amp;width=750" width="750" height="369" alt="Weißer Nike Air Force 1 ’07 in Seitenansicht" loading="eager" fetchpriority="high" decoding="async">
+        <figcaption>Bildbeispiel · Nike Air Force 1 ’07</figcaption>
+      </figure>
+    </section>
+
+    <nav class="block" aria-labelledby="kategorien">
+      <h2 id="kategorien">Kategorien bei HipobuyFind</h2>
+      <ul class="directory">
+        <li><a href="https://hipobuyfind.com/category-911-Shoes.html"><span aria-hidden="true">01</span>Schuhe</a></li>
+        <li><a href="https://hipobuyfind.com/category-912-Hoodies%2FSweaters.html"><span aria-hidden="true">02</span>Hoodies und Pullover</a></li>
+        <li><a href="https://hipobuyfind.com/category-913-T-Shirts.html"><span aria-hidden="true">03</span>T-Shirts</a></li>
+        <li><a href="https://hipobuyfind.com/category-914-Jackets.html"><span aria-hidden="true">04</span>Jacken</a></li>
+        <li><a href="https://hipobuyfind.com/category-915-Pants%2FShorts.html"><span aria-hidden="true">05</span>Hosen und Shorts</a></li>
+        <li><a href="https://hipobuyfind.com/category-916-Headwear.html"><span aria-hidden="true">06</span>Kappen und Mützen</a></li>
+        <li><a href="https://hipobuyfind.com/category-917-Sets.html"><span aria-hidden="true">07</span>Sets</a></li>
+        <li><a href="https://hipobuyfind.com/category-918-underwear%2Funderpants.html"><span aria-hidden="true">08</span>Unterwäsche</a></li>
+        <li><a href="https://hipobuyfind.com/category-919-Jersey.html"><span aria-hidden="true">09</span>Trikots</a></li>
+        <li><a href="https://hipobuyfind.com/category-920-Accessories.html"><span aria-hidden="true">10</span>Accessoires</a></li>
+      </ul>
+    </nav>
+
+    <article class="block feature" aria-labelledby="produktlinks">
+      <header>
+        <p class="label">Ratgeber 01</p>
+        <h2 id="produktlinks">OopBuy Produktlinks richtig prüfen</h2>
+      </header>
+      <div class="prose">
+        <p>Übernimm aus dem OopBuy spreadsheet den Link zum einzelnen Artikel und speichere dazu Modellnummer, Farbe und Größe. Öffne bei Weidian-, Taobao- und 1688-Angeboten vor der Bestellung die Originalseite. So kannst du den Händlernamen, die Artikelnummer und die ausgewählte Variante abgleichen. Bei einem 1688-Angebot lohnt sich zusätzlich ein Blick auf die Mindestbestellmenge.</p>
+        <p>Notiere zu jedem Artikel das Prüfdatum. Ist ein Produktlink defekt, suche über die Artikelnummer oder das Modell nach dem Angebot. Vergleiche bei einem Ersatztreffer die Größentabelle, die Materialangabe und die Rückgabebedingungen des Händlers. Ähnliche Vorschaubilder können zu verschiedenen Varianten gehören.</p>
+      </div>
+    </article>
+
+    <section class="block" aria-labelledby="bildbeispiele">
+      <h2 id="bildbeispiele">Vier Details für den Vergleich</h2>
+      <p class="intro subtle">Die Markenbilder dienen als Anschauungsbeispiele. Für ein konkretes Angebot ziehst du die Produktbilder des Händlers und gegebenenfalls die Lagerfotos heran.</p>
+      <div class="gallery">
+        <figure>
+          <img src="https://assets.christiandior.com/is/image/diorprod/143T04A4043X0200_E01-1?$r4x5_default$=&amp;bfc=on&amp;crop=424,150,1164,1349&amp;hei=500&amp;qlt=76&amp;scale=0.7&amp;wid=400" width="400" height="500" alt="Weißes Dior-T-Shirt mit weißem Schriftzug auf dunkelblauem Brustband" loading="lazy" decoding="async">
+          <figcaption><strong>Dior · T-Shirt</strong><br>Schulterbreite und Sitz des Brustbands vergleichen.</figcaption>
+        </figure>
+        <figure>
+          <img src="https://www.ln-cc.com/dw/image/v2/BGDG_PRD/on/demandware.static/-/Sites-09/default/dw4bc8faa1/images/zoom/guc0345001_bei_00.jpg?sh=516&amp;sw=375" width="375" height="516" alt="Beige Gucci-Baseballkappe mit GG-Muster" loading="lazy" decoding="async">
+          <figcaption><strong>Gucci · Kappe</strong><br>Kopfumfang und Verstellbereich der Kappe prüfen.</figcaption>
+        </figure>
+        <figure>
+          <img src="https://us.louisvuitton.com/images/is/image/lv/1/PP_VP_L/louis-vuitton-neverfull-mm--M46975_PM2_Front%20view.jpg?wid=480" width="490" height="490" alt="Braune Louis Vuitton Neverfull MM mit Monogrammmuster und zwei Henkeln" loading="lazy" decoding="async">
+          <figcaption><strong>Louis Vuitton · Tasche</strong><br>Taschenbreite, Henkellänge und Innenaufteilung vergleichen.</figcaption>
+        </figure>
+        <figure>
+          <img src="https://assets.hermes.com/is/image/hermesproduct/700001F%2031_front_wm_101?$product_default_bg$=" width="300" height="400" alt="Weißer Hermès-Clic-H-Armreif mit goldfarbenem H-Verschluss" loading="lazy" decoding="async">
+          <figcaption><strong>Hermès · Armreif</strong><br>Innenumfang und Mechanik des Verschlusses prüfen.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <article class="block" aria-labelledby="pruefung">
+      <p class="label">Ratgeber 02</p>
+      <h2 id="pruefung">Größen, QC-Fotos und Versandkosten vergleichen</h2>
+      <ol class="checks">
+        <li>
+          <p class="label">01 · Passform</p>
+          <h3>Mit eigenen Maßen abgleichen</h3>
+          <p>Prüfe bei Sneakern, ob die Tabelle Fußlänge oder Einlegesohlenlänge angibt. Miss bei Hoodies die Brustweite flach von Achsel zu Achsel, bei Jacken die Ärmellänge und bei Hosen Bundweite und Innenbeinlänge. Bei Sets kannst du die Maße von Ober- und Unterteil getrennt vergleichen.</p>
+        </li>
+        <li>
+          <p class="label">02 · Qualitätskontrolle</p>
+          <h3>OopBuy QC-Fotos gezielt lesen</h3>
+          <p>Bitte bei Bedarf um ein Lagerfoto mit Maßband und eine Nahaufnahme vom Größenetikett. Gleiche bei Trikots den Aufdruck, bei Jacken den Reißverschluss und bei Schuhen die Nähte ab. Kläre Farbabweichungen oder fehlende Fotos vor der Versandfreigabe.</p>
+        </li>
+        <li>
+          <p class="label">03 · Versand</p>
+          <h3>Mit denselben Paketdaten rechnen</h3>
+          <p>Vergleiche Versandangebote mit der tatsächlichen Zieladresse, etwa in Deutschland, Österreich oder der Schweiz. Halte Paketmaße und Wiegegewicht bereit und prüfe, ob der Dienstleister nach Volumengewicht abrechnet. Rechne mit dem angezeigten Wechselkurs und den zum Zielort passenden Gebühren.</p>
+        </li>
+      </ol>
+    </article>
+
+    <section class="block" aria-labelledby="fragen">
+      <h2 id="fragen">Häufige Fragen</h2>
+      <div class="faq">
+        <details open>
+          <summary>Was ist ein OopBuy spreadsheet?</summary>
+          <p>Ein OopBuy spreadsheet ist eine nach Produktgruppen geordnete Sammlung von Produktverweisen für die Einkaufsrecherche. Diese Seite ist ein unabhängiger Ratgeber und verweist auf Kategorien bei HipobuyFind.</p>
+        </details>
+        <details>
+          <summary>Wie erkenne ich, ob ein Produktlink noch aktuell ist?</summary>
+          <p>Öffne das ursprüngliche Angebot und wähle die gewünschte Farbe und Größe aus. Prüfe, ob genau diese Variante verfügbar ist, und halte das Datum deines letzten Checks fest.</p>
+        </details>
+        <details>
+          <summary>Was zeigen QC-Fotos aus dem Lager?</summary>
+          <p>QC-Fotos zeigen den zur Kontrolle fotografierten Artikel. Sie helfen dir, Farbe, Etikett, Maße und sichtbare Mängel zu prüfen. Für einen Echtheitsnachweis brauchst du zusätzliche Belege zur Herkunft.</p>
+        </details>
+        <details>
+          <summary>Wie finde ich die passende Größe bei Sneakern und Hoodies?</summary>
+          <p>Miss bei Sneakern beide Füße und vergleiche den längeren Fuß mit der Größentabelle des Angebots. Bei Hoodies helfen Brustweite und Rückenlänge eines passenden, flach ausgelegten Kleidungsstücks.</p>
+        </details>
+        <details>
+          <summary>Wie vergleiche ich die Gesamtkosten für den Versand?</summary>
+          <p>Addiere Artikelpreis, gegebenenfalls Inlandsversand und Servicegebühren, internationale Versandkosten und mögliche Einfuhrkosten. Vergleiche Angebote für dasselbe Zielland mit denselben Paketmaßen und demselben Gewicht.</p>
+        </details>
+      </div>
+    </section>
+  </main>
+  <footer class="foot">
+    <div class="wrap">
+      <p>Unabhängiger Ratgeber zur Produktrecherche</p>
+      <a href="https://www.hipobuyfind.com">Zu HipobuyFind <span aria-hidden="true">&nbsp;↗</span></a>
+    </div>
+  </footer>
+</body>
+</html>
